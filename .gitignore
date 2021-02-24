@@ -67,7 +67,5 @@ lightsaber_sounds/
 releases/
 
 *.txt
-gradlew
-*.bat
 default_textures.zip
 cloc-1.64.exe
