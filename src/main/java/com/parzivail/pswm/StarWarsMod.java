@@ -528,7 +528,6 @@ public class StarWarsMod
 		this.registerMessageServer(MessageCreateBlasterBolt.class);
 		this.registerMessageServer(MessageSetPlayerHolding.class);
 		this.registerMessageServer(MessageTransferHyperdrive.class);
-		this.registerMessageServer(MessageSpawn.class);
 		this.registerMessageServer(MessageThrowSaber.class);
 		this.registerMessageServer(MessageHolocronRefreshPowers.class);
 		this.registerMessageServer(MessageHolocronSetActive.class);
