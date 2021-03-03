@@ -6,7 +6,6 @@ import com.parzivail.pswm.StarWarsMod;
 import com.parzivail.pswm.network.MessageSetPlayerHolding;
 import com.parzivail.pswm.quest.DialogTree;
 import com.parzivail.pswm.quest.Quest;
-import com.parzivail.pswm.utils.StatTrack;
 import com.parzivail.util.world.ItemUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -59,7 +58,6 @@ public class Imperial10_2 extends Quest
 	@Override
 	public void end(EntityPlayer player)
 	{
-		StatTrack.addStat("qlc_imperial");
 		player.playSound(Resources.MODID + ":" + "quest.complete", 1, 1);
 		StarWarsMod.network.sendToServer(new MessageSetPlayerHolding(player, new ItemStack(StarWarsItems.silverImperialCredit, 10), true));
 		setQuestDone(player, this);

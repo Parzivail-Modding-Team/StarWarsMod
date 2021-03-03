@@ -1,6 +1,5 @@
 package com.parzivail.pswm.tileentities;
 
-import com.parzivail.pswm.utils.StatTrack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
@@ -99,7 +98,6 @@ public class TileEntityBactaTank extends TileEntity
 
 			if (playersInRange.size() > 0)
 			{
-				StatTrack.addStat("useBactaTank");
 				setPlayerInsideId(playersInRange.get(0).getCommandSenderName());
 				ticksInside = 0;
 			}

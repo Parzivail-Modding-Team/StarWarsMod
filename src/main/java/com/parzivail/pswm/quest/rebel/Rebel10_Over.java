@@ -4,7 +4,6 @@ import com.parzivail.pswm.Resources;
 import com.parzivail.pswm.network.MessageSetPlayerHolding;
 import com.parzivail.pswm.quest.DialogTree;
 import com.parzivail.pswm.quest.Quest;
-import com.parzivail.pswm.utils.StatTrack;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
@@ -63,7 +62,6 @@ public class Rebel10_Over extends Quest
 	@Override
 	public void end(EntityPlayer player)
 	{
-		StatTrack.addStat("qlc_rebel");
 		player.playSound(Resources.MODID + ":" + "quest.complete", 1, 1);
 		network.sendToServer(new MessageSetPlayerHolding(player, new ItemStack(silverImperialCredit, 10), true));
 		setQuestDone(player, this);

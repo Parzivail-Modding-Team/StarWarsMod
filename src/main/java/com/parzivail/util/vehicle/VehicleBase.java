@@ -2,7 +2,6 @@ package com.parzivail.util.vehicle;
 
 import com.parzivail.pswm.Resources;
 import com.parzivail.pswm.StarWarsMod;
-import com.parzivail.pswm.utils.StatTrack;
 import com.parzivail.util.math.MathUtils;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -138,7 +137,6 @@ public class VehicleBase extends EntityLiving
 		if (!this.worldObj.isRemote && this.riddenByEntity == null)
 		{
 			p_70085_1_.mountEntity(this);
-			StatTrack.addStat("ride-" + this.getCommandSenderName().replaceAll("\\W", ""));
 			return true;
 		}
 		return false;

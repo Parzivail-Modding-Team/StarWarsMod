@@ -2,7 +2,6 @@ package com.parzivail.pswm.commands;
 
 import com.parzivail.pswm.Resources;
 import com.parzivail.pswm.force.Cron;
-import com.parzivail.pswm.utils.StatTrack;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -57,7 +56,6 @@ public class CommandJediRobes extends CommandBase
 
 		if (player != null && Cron.getHolocron(player) != null && (key.equalsIgnoreCase("level") || key.equalsIgnoreCase("side") || key.equalsIgnoreCase("xp") || key.equalsIgnoreCase("maxxp")))
 		{
-			StatTrack.addStat("cron-" + key);
 			ItemStack robes = Cron.getHolocron(player);
 			Cron.getXP(robes);
 			Cron.getMaxXP(robes);

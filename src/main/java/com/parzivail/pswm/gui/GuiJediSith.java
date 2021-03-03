@@ -38,7 +38,6 @@ public class GuiJediSith extends GuiScreen
 		if (button.enabled)
 			if (button.id == this.jediButton.id)
 			{
-				Cron.addLeaderboardSide("jedi");
 				StarWarsMod.network.sendToServer(new MessageRobesStringNBT(this.player, Resources.nbtSide, Cron.SIDE_JEDI));
 				this.stack.stackTagCompound.setString(Resources.nbtSide, Cron.SIDE_JEDI);
 				StarWarsMod.mc.currentScreen = null;
@@ -46,7 +45,6 @@ public class GuiJediSith extends GuiScreen
 			}
 			else if (button.id == this.sithButton.id)
 			{
-				Cron.addLeaderboardSide("sith");
 				StarWarsMod.network.sendToServer(new MessageRobesStringNBT(this.player, Resources.nbtSide, Cron.SIDE_SITH));
 				this.stack.stackTagCompound.setString(Resources.nbtSide, Cron.SIDE_SITH);
 				StarWarsMod.mc.currentScreen = null;

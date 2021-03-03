@@ -4,7 +4,6 @@ import com.parzivail.pswm.Resources;
 import com.parzivail.pswm.items.weapons.ItemLightsaber;
 import com.parzivail.pswm.quest.DialogTree;
 import com.parzivail.pswm.quest.Quest;
-import com.parzivail.pswm.utils.StatTrack;
 import com.parzivail.util.world.ItemUtils;
 import net.minecraft.entity.player.EntityPlayer;
 
@@ -95,7 +94,6 @@ public class Jedi3 extends Quest
 	@Override
 	public void end(EntityPlayer player)
 	{
-		StatTrack.addStat("qlc_jedi");
 		player.playSound(Resources.MODID + ":" + "quest.complete", 1, 1);
 		setQuestDone(player, this);
 	}

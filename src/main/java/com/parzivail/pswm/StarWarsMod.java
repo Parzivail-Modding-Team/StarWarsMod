@@ -13,7 +13,6 @@ import com.parzivail.pswm.registry.*;
 import com.parzivail.pswm.tabs.SequelStarWarsTab;
 import com.parzivail.pswm.tabs.StarWarsTab;
 import com.parzivail.pswm.tabs.StarWarsTabBlocks;
-import com.parzivail.pswm.utils.StatTrack;
 import com.parzivail.pswm.world.StructureBank;
 import com.parzivail.util.block.*;
 import com.parzivail.util.ui.Lumberjack;
@@ -294,14 +293,11 @@ public class StarWarsMod
 	public static DamageSource roadkillDamageSource;
 	public FMLPreInitializationEvent preInitEvent;
 
-	//public static final Rollbar rollbar = new Rollbar("6364f4dd34ff449e870620915d5c2f3d", "production");
-
 	public StarWarsMod()
 	{
 		Lumberjack.info("========== Begin Parzi's Star Wars Mod constructor ==========");
 		this.checkJavaVersion();
 		this.checkModVersion();
-		this.addLaunch();
 		Lumberjack.info("========== Begin Parzi's Star Wars Mod constructor ==========");
 	}
 
@@ -341,29 +337,6 @@ public class StarWarsMod
 		else
 		{
 			Lumberjack.log("Confirmed client using Java 1.8+");
-		}
-	}
-
-	private void addLaunch()
-	{
-		StatTrack.addStat("launch");
-		StatTrack.addStat(Resources.VERSION);
-		InputStream in = null;
-		try
-		{
-			in = new URL(Resources.launchAddLink + "?mod=pswmlaunch").openStream();
-			String s = IOUtils.toString(in);
-			Lumberjack.log("Launch log OK");
-			IOUtils.closeQuietly(in);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		finally
-		{
-			if (in != null)
-				IOUtils.closeQuietly(in);
 		}
 	}
 

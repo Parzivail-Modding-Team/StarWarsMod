@@ -395,37 +395,6 @@ public class Cron
 	}
 
 	/**
-	 * Querys the server and increments the players per side cound for the given side
-	 *
-	 * @param side The side to increment
-	 */
-	public static void addLeaderboardSide(String side)
-	{
-		InputStream in = null;
-		try
-		{
-			in = new URL(Resources.robesLeaderboardAddLink + "?m=add&s=" + side).openStream();
-			switch (IOUtils.toString(in))
-			{
-				case "OK":
-					break;
-				default:
-					break;
-			}
-			IOUtils.closeQuietly(in);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		finally
-		{
-			if (in != null)
-				IOUtils.closeQuietly(in);
-		}
-	}
-
-	/**
 	 * Gets the basic powers available to any side
 	 *
 	 * @return A {@link String} array of power names

@@ -1,7 +1,6 @@
 package com.parzivail.pswm.network;
 
 import com.parzivail.pswm.items.ItemQuestLog;
-import com.parzivail.pswm.utils.StatTrack;
 import com.parzivail.pswm.world.TransferDim;
 import com.parzivail.util.network.PMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
@@ -36,7 +35,6 @@ public class MessageHyperdrive extends PMessage<MessageHyperdrive>
 		}
 		Entity mount = player.ridingEntity;
 		player.mountEntity(null);
-		StatTrack.addStat("hyperdrive-" + MinecraftServer.getServer().worldServerForDimension(this.destDim).provider.getDimensionName());
 		new TransferDim(MinecraftServer.getServer().worldServerForDimension(this.destDim)).teleport(mount);
 		new TransferDim(MinecraftServer.getServer().worldServerForDimension(this.destDim)).teleport(this.player);
 		this.player.setSneaking(false);

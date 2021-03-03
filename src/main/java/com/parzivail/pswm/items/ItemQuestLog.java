@@ -6,7 +6,6 @@ import com.parzivail.pswm.network.MessageSetQuestLogNbt;
 import com.parzivail.pswm.network.MessageSetQuests;
 import com.parzivail.pswm.quest.IQuest;
 import com.parzivail.pswm.quest.NBTQuestTag;
-import com.parzivail.pswm.utils.StatTrack;
 import com.parzivail.util.ui.LangUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -41,7 +40,6 @@ public class ItemQuestLog extends Item
 		if (stack == null)
 			return;
 
-		StatTrack.addStat("qc-" + quest.getID().replaceAll("\\W", ""));
 		NBTTagCompound co = getQuests(stack).setQuestDone(quest.getID()).getCompound();
 		StarWarsMod.network.sendToServer(new MessageSetQuests(player, co));
 	}
