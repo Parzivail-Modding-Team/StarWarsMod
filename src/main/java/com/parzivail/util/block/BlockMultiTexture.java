@@ -15,14 +15,21 @@ import java.util.List;
 public class BlockMultiTexture extends PBlock
 {
 	private String[] names;
+	private final boolean newStyleName;
 	private int subtypes;
 	@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
 
 	public BlockMultiTexture(String base, String[] postfixes, Material material)
 	{
+		this(base, postfixes, material, false);
+	}
+
+	public BlockMultiTexture(String base, String[] postfixes, Material material, boolean newStyleName)
+	{
 		super(base, material);
 		this.names = postfixes;
+		this.newStyleName = newStyleName;
 		this.subtypes = this.names.length;
 	}
 
@@ -52,7 +59,10 @@ public class BlockMultiTexture extends PBlock
 	public void registerBlockIcons(IIconRegister par1IconRegister)
 	{
 		this.icons = new IIcon[this.subtypes];
-		for (int i = 0; i < this.icons.length; i++)
-			this.icons[i] = par1IconRegister.registerIcon(Resources.MODID + ":" + this.name + this.names[i]);
+		for (int i = 0; i < this.subtypes; i++)
+			if (newStyleName)
+				this.icons[i] = par1IconRegister.registerIcon(Resources.MODID + ':' + this.name + '/' + this.names[i]);
+			else
+				this.icons[i] = par1IconRegister.registerIcon(Resources.MODID + ':' + this.name + this.names[i]);
 	}
 }

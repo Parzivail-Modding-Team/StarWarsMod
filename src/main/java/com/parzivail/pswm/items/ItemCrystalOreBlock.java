@@ -1,6 +1,6 @@
 package com.parzivail.pswm.items;
 
-import com.parzivail.pswm.blocks.BlockCrystalOre;
+import com.parzivail.pswm.blocks.ore.BlockCrystalOre;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -22,6 +22,6 @@ public class ItemCrystalOreBlock extends ItemBlock
 	@Override
 	public String getUnlocalizedName(ItemStack itemstack)
 	{
-		return getUnlocalizedName() + BlockCrystalOre.colors[itemstack.getItemDamage()];
+		return getUnlocalizedName() + '.' + BlockCrystalOre.colors[itemstack.getItemDamage()];
 	}
 }

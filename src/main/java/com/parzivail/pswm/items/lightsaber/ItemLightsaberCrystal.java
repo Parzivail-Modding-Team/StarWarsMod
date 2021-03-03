@@ -16,14 +16,14 @@ import java.util.List;
 
 public class ItemLightsaberCrystal extends Item
 {
-	public String name = "lightsaberCrystal";
-	public String[] colors = { "red", "green", "blue", "black", "cyan", "gray", "pink", "purple", "white", "yellow", "prism", "shard" };
+	public static final String name = "lightsaberCrystal";
+	public static final String[] colors = { "red", "green", "blue", "black", "cyan", "gray", "pink", "purple", "white", "yellow", "prism", "shard" };
 	@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
 
 	public ItemLightsaberCrystal()
 	{
-		this.setUnlocalizedName(Resources.MODID + "." + this.name);
+		this.setUnlocalizedName(Resources.MODID + "." + name);
 		this.setHasSubtypes(true);
 		this.setCreativeTab(StarWarsMod.StarWarsTab);
 	}
@@ -53,7 +53,7 @@ public class ItemLightsaberCrystal extends Item
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(Item par1, CreativeTabs par2CreativeTabs, List par3List)
 	{
-		for (int x = 0; x < this.colors.length; x++)
+		for (int x = 0; x < colors.length; x++)
 			par3List.add(new ItemStack(this, 1, x));
 	}
 
@@ -61,8 +61,8 @@ public class ItemLightsaberCrystal extends Item
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister par1IconRegister)
 	{
-		this.icons = new IIcon[this.colors.length];
+		this.icons = new IIcon[colors.length];
 		for (int i = 0; i < this.icons.length; i++)
-			this.icons[i] = par1IconRegister.registerIcon(Resources.MODID + ":" + this.name + "_" + this.colors[i]);
+			this.icons[i] = par1IconRegister.registerIcon(Resources.MODID + ":" + name + "_" + colors[i]);
 	}
 }
