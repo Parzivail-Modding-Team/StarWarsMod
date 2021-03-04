@@ -131,20 +131,12 @@ class Spline
 	 */
 	public boolean checkValues()
 	{
-		if (xx.length < 2)
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
+		return xx.length >= 2;
 	}
 
 	/**
 	 * Returns the first derivation at x.
 	 *
-	 * @param x
 	 * @return the first derivation at x
 	 */
 	public double getDx(double x)

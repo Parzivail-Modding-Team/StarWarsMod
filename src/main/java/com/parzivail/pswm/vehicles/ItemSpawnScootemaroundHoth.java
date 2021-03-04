@@ -4,10 +4,11 @@ import com.parzivail.pswm.Resources;
 import com.parzivail.pswm.StarWarsItems;
 import com.parzivail.pswm.StarWarsMod;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemSpawnScootemaroundHoth extends net.minecraft.item.Item
+public class ItemSpawnScootemaroundHoth extends Item
 {
 	public String name = "spawnScootemaroundHoth";
 

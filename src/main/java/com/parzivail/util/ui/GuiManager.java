@@ -7,7 +7,7 @@ import java.util.Iterator;
 
 public class GuiManager
 {
-	public static ArrayList<GuiToast> toasts = new ArrayList<GuiToast>();
+	public static ArrayList<GuiToast> toasts = new ArrayList<>();
 
 	/**
 	 * Renders all active Toasts

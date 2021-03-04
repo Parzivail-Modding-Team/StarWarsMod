@@ -132,7 +132,7 @@ public class ItemRegister
 		for (int i = 0; i < StarWarsItems.lightsaberNew.length; i++)
 		{
 			StarWarsItems.lightsaberNew[i] = new ItemLightsaber(i);
-			GameRegistry.registerItem(StarWarsItems.lightsaberNew[i], "lightsaberNew" + String.valueOf(i));
+			GameRegistry.registerItem(StarWarsItems.lightsaberNew[i], "lightsaberNew" + i);
 		}
 
 		StarWarsItems.lightsaberCrystal = new ItemLightsaberCrystal();

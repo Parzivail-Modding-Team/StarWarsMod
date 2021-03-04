@@ -9,19 +9,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ItemMusicDisc extends ItemRecord
 {
-	private static final Map records = new HashMap();
-
-	public static ItemMusicDisc getRecord(String par0Str)
-	{
-		return (ItemMusicDisc)records.get(par0Str);
-	}
-
 	public String name = "musicDisc";
 	public final String field_150929_a;
 
@@ -32,7 +23,6 @@ public class ItemMusicDisc extends ItemRecord
 		this.maxStackSize = 1;
 		this.setUnlocalizedName(Resources.MODID + "." + this.name);
 		this.setCreativeTab(null);
-		records.put(this.field_150929_a, this);
 	}
 
 	@Override

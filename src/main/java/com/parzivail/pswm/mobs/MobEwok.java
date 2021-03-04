@@ -8,7 +8,9 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.IAnimals;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class MobEwok extends EntityAnimal implements IAnimals
@@ -20,7 +22,7 @@ public class MobEwok extends EntityAnimal implements IAnimals
 		getNavigator().setCanSwim(true);
 		tasks.addTask(0, new AiFollowType(this, MobDroidProtocol.class, 0.5f, 10));
 		tasks.addTask(1, new AiFreqMove(this, 0.5f, 0));
-		setCurrentItemOrArmor(0, new net.minecraft.item.ItemStack(StarWarsItems.ewokSpear, 1));
+		setCurrentItemOrArmor(0, new ItemStack(StarWarsItems.ewokSpear, 1));
 	}
 
 	@Override
@@ -47,17 +49,16 @@ public class MobEwok extends EntityAnimal implements IAnimals
 	protected void entityInit()
 	{
 		super.entityInit();
-		getDataWatcher().addObject(25, Integer.valueOf(rand.nextInt(3)));
+		getDataWatcher().addObject(25, rand.nextInt(3));
 	}
 
 	protected Item dropItem()
 	{
-		switch (rand.nextInt(60))
+		if (rand.nextInt(60) == 36)
 		{
-			case 36:
-				dropItem(StarWarsItems.ewokSpear, 1);
+			dropItem(StarWarsItems.ewokSpear, 1);
 		}
-		return Item.getItemFromBlock(net.minecraft.init.Blocks.leaves);
+		return Item.getItemFromBlock(Blocks.leaves);
 	}
 
 	@Override

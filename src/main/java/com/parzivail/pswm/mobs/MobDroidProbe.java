@@ -14,6 +14,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.MathHelper;
@@ -84,7 +85,7 @@ public class MobDroidProbe extends EntityDroidBase implements IShootThings
 	protected void entityInit()
 	{
 		super.entityInit();
-		dataWatcher.addObject(18, Byte.valueOf((byte)0));
+		dataWatcher.addObject(18, (byte)0);
 	}
 
 	@Override
@@ -127,7 +128,7 @@ public class MobDroidProbe extends EntityDroidBase implements IShootThings
 	{
 		ItemStack itemstack = par1EntityPlayer.inventory.getCurrentItem();
 		if (itemstack == null)
-			itemstack = new ItemStack(net.minecraft.init.Blocks.air);
+			itemstack = new ItemStack(Blocks.air);
 		if (isTamed())
 		{
 			if (par1EntityPlayer.getUniqueID().equals(getOwner().getUniqueID()) && !worldObj.isRemote && !isBreedingItem(itemstack) && itemstack.getItem() == StarWarsItems.droidHacker)
@@ -137,7 +138,7 @@ public class MobDroidProbe extends EntityDroidBase implements IShootThings
 				isJumping = false;
 			}
 		}
-		else if (itemstack != null && itemstack.getItem() == StarWarsItems.droidHacker && par1EntityPlayer.getDistanceSqToEntity(this) < 9.0D)
+		else if (itemstack.getItem() == StarWarsItems.droidHacker && par1EntityPlayer.getDistanceSqToEntity(this) < 9.0D)
 		{
 			if (!worldObj.isRemote)
 				if (rand.nextInt(3) == 0)
@@ -153,7 +154,7 @@ public class MobDroidProbe extends EntityDroidBase implements IShootThings
 					tasks.taskEntries.clear();
 					tasks.addTask(2, aiSit);
 					tasks.addTask(3, aiTempt = new EntityAITempt(this, 0.6D, StarWarsItems.droidHacker, true));
-					tasks.addTask(5, new net.minecraft.entity.ai.EntityAIFollowOwner(this, 1.0D, 10.0F, 5.0F));
+					tasks.addTask(5, new EntityAIFollowOwner(this, 1.0D, 10.0F, 5.0F));
 					tasks.addTask(1, aiArrow = new AiTrooperAttack(this, 1.0D, 20, 60, 15.0F));
 					tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 					tasks.addTask(3, new EntityAILookIdle(this));

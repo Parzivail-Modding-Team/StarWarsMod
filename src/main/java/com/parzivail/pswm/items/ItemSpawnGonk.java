@@ -5,10 +5,11 @@ import com.parzivail.pswm.StarWarsItems;
 import com.parzivail.pswm.StarWarsMod;
 import com.parzivail.pswm.mobs.MobDroidGNK;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemSpawnGonk extends net.minecraft.item.Item
+public class ItemSpawnGonk extends Item
 {
 	public String name = "spawnGonk";
 

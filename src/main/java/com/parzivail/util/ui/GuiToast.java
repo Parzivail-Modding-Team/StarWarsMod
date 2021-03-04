@@ -166,7 +166,7 @@ public class GuiToast extends Gui
 	// "ToastPosition.BOTTOM | ToastPosition.RIGHT"
 	// use the bitwise and operator to test i.e.
 	// "if ((position & ToastPosition.BOTTOM) == ToastPosition.BOTTOM) { ... }"
-	public class ToastPosition
+	public static class ToastPosition
 	{
 		/**
 		 * Top Discriminator

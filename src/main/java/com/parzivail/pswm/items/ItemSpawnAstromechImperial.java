@@ -5,10 +5,11 @@ import com.parzivail.pswm.StarWarsItems;
 import com.parzivail.pswm.StarWarsMod;
 import com.parzivail.pswm.mobs.MobDroidAstromechImperial;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemSpawnAstromechImperial extends net.minecraft.item.Item
+public class ItemSpawnAstromechImperial extends Item
 {
 	public String name = "spawnAstromechImperial";
 

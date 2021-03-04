@@ -44,7 +44,7 @@ public class PowerPush extends PowerBase
 				e.isAirBorne = true;
 
 				if (e instanceof EntityPlayer)
-					((EntityPlayer)e).velocityChanged = true;
+					e.velocityChanged = true;
 
 				StarWarsMod.network.sendToServer(new MessageEntityAlterMotion(e, lookVec));
 

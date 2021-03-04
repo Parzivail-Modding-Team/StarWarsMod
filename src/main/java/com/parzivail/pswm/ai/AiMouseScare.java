@@ -16,14 +16,8 @@ import java.util.List;
 
 public class AiMouseScare extends EntityAIBase
 {
-	private final IEntitySelector field_98218_a = new IEntitySelector()
-	{
-		@Override
-		public boolean isEntityApplicable(Entity p_82704_1_)
-		{
-			return p_82704_1_.isEntityAlive() && AiMouseScare.this.theEntity.getEntitySenses().canSee(p_82704_1_);
-		}
-	};
+	private final IEntitySelector field_98218_a = p_82704_1_ ->
+			p_82704_1_.isEntityAlive() && AiMouseScare.this.theEntity.getEntitySenses().canSee(p_82704_1_);
 	private EntityCreature theEntity;
 	private double farSpeed;
 	private double nearSpeed;

@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.world.Teleporter;
@@ -131,7 +132,7 @@ public class TransferDim extends Teleporter
 		double dx = this.worldserver.getSpawnPoint().posX;
 		double dz = this.worldserver.getSpawnPoint().posZ;
 		double dy = 250.0D;
-		while (this.worldserver.getBlock((int)dx, (int)dy - 1, (int)dz).equals(net.minecraft.init.Blocks.air) && dy > 0.0D)
+		while (this.worldserver.getBlock((int)dx, (int)dy - 1, (int)dz).equals(Blocks.air) && dy > 0.0D)
 			dy -= 1.0D;
 		if (dy == 0.0D)
 			dy = 128.0D;

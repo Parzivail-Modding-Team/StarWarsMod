@@ -73,7 +73,7 @@ public class OutlineButtonCreditCounter extends OutlineButton
 
 			if (c != Integer.MAX_VALUE)
 			{
-				GFX.drawTextShadow(fontrenderer, String.valueOf(c) + (currentCost != -1 ? " - " + String.valueOf(currentCost) : ""), this.xPosition + 15, this.yPosition + 6, 1, textColor);
+				GFX.drawTextShadow(fontrenderer, c + (currentCost != -1 ? " - " + currentCost : ""), this.xPosition + 15, this.yPosition + 6, 1, textColor);
 				GFX.renderItem(this.xPosition, this.yPosition + 2, new ItemStack(StarWarsItems.imperialCredit, 0));
 
 				if (k == 2 && currentCost != -1)
@@ -84,7 +84,7 @@ public class OutlineButtonCreditCounter extends OutlineButton
 				GFX.drawTextShadowCenter(fontrenderer, "Get Item", this.xPosition + (this.width / 2), this.yPosition + 6, 1, textColor);
 
 				if (k == 2 && currentCost != -1)
-					GFX.drawTooltip(mX + 2, mY + 2, String.valueOf(currentCost) + " Credits");
+					GFX.drawTooltip(mX + 2, mY + 2, currentCost + " Credits");
 			}
 		}
 		GL11.glPopMatrix();

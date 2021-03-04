@@ -58,7 +58,7 @@ public class ModelCompressionArmor extends ModelBiped
 		this._model.heldItemRight = stack != null ? 1 : 0;
 		this._model.isSneak = entity.isSneaking();
 		this._model.bipedHead.showModel = entity.getEquipmentInSlot(3) != null && entity.getEquipmentInSlot(3).getItem() == armor;
-		this._model.bipedHeadwear.showModel = true || entity.getEquipmentInSlot(3) != null && entity.getEquipmentInSlot(3).getItem() == armor;
+		this._model.bipedHeadwear.showModel = true;
 		this._model.bipedBody.showModel = entity.getEquipmentInSlot(2) != null && entity.getEquipmentInSlot(2).getItem() == armor;
 		this._model.bipedRightArm.showModel = entity.getEquipmentInSlot(2) != null && entity.getEquipmentInSlot(2).getItem() == armor;
 		this._model.bipedLeftArm.showModel = entity.getEquipmentInSlot(2) != null && entity.getEquipmentInSlot(2).getItem() == armor;

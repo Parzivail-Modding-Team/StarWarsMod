@@ -41,10 +41,10 @@ public class BlockDeathStarDoor extends PBlockContainer implements IDebugProvide
 		if (tile instanceof TileEntityDeathStarDoor)
 		{
 			TileEntityDeathStarDoor t = (TileEntityDeathStarDoor)tile;
-			list.add(LangUtils.translate("moving.0", String.valueOf(t.isMoving)));
+			list.add(LangUtils.translate("moving.0", t.isMoving));
 			list.add(t.isOpening ? LangUtils.translate("opening") : LangUtils.translate("closing"));
 			float l = t.progressTicks / (float)t.totalTicks;
-			list.add(String.valueOf((int)(l * 100f)) + "%");
+			list.add((int)(l * 100f) + "%");
 		}
 
 		return list;

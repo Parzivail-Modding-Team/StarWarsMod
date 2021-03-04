@@ -206,7 +206,7 @@ public class ClientEventHandler
 	@SubscribeEvent
 	public void onPlayerInteract(PlayerInteractEvent playerInteractEvent)
 	{
-		if (playerInteractEvent.entityPlayer.ridingEntity != null && playerInteractEvent.action == net.minecraftforge.event.entity.player.PlayerInteractEvent.Action.RIGHT_CLICK_AIR && playerInteractEvent.entityPlayer.inventory.getCurrentItem() == null)
+		if (playerInteractEvent.entityPlayer.ridingEntity != null && playerInteractEvent.action == PlayerInteractEvent.Action.RIGHT_CLICK_AIR && playerInteractEvent.entityPlayer.inventory.getCurrentItem() == null)
 		{
 			Entity targetted = EntityUtils.rayTrace(100, playerInteractEvent.entityPlayer, new Entity[] { playerInteractEvent.entityPlayer.ridingEntity });
 
@@ -340,7 +340,7 @@ public class ClientEventHandler
 		else
 			GFX.changeCameraDist(4);
 
-		if (event.entity instanceof EntityPlayer && ((EntityPlayer)event.entity).ridingEntity instanceof VehicleAirBase)
+		if (event.entity instanceof EntityPlayer && event.entity.ridingEntity instanceof VehicleAirBase)
 		{
 			if (event.isCancelable())
 				event.setCanceled(true);

@@ -39,13 +39,6 @@ public class ItemSlopeWizard extends Item
 			}
 		}
 
-		Block blockUsing = StarWarsMod.blockTempleStoneMH;
-
-		if (stack.stackTagCompound.hasKey("blockUsing") && Block.getBlockFromName(stack.stackTagCompound.getString("blockUsing")) != null)
-		{
-			blockUsing = Block.getBlockFromName(stack.stackTagCompound.getString("blockUsing"));
-		}
-
 		if (stack.stackTagCompound.getIntArray("firstPos").length == 0)
 		{
 			stack.stackTagCompound.setIntArray("firstPos", new int[] { x, y, z });

@@ -5,10 +5,11 @@ import com.parzivail.pswm.StarWarsItems;
 import com.parzivail.pswm.StarWarsMod;
 import com.parzivail.pswm.mobs.trooper.MobSandtrooper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemSpawnNpcLandspeeder extends net.minecraft.item.Item
+public class ItemSpawnNpcLandspeeder extends Item
 {
 	public String name = "spawnNpcLandspeeder";
 

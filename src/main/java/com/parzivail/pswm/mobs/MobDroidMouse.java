@@ -3,12 +3,14 @@ package com.parzivail.pswm.mobs;
 import com.parzivail.pswm.Resources;
 import com.parzivail.pswm.StarWarsItems;
 import com.parzivail.pswm.ai.AiFreqMove;
+import com.parzivail.pswm.ai.AiMouseScare;
 import com.parzivail.util.entity.EntityUtils;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowOwner;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
@@ -26,7 +28,7 @@ public class MobDroidMouse extends EntityDroidBase
 		tasks.addTask(0, aiSit);
 		tasks.addTask(1, new EntityAIFollowOwner(this, 1.0D, 10.0F, 5.0F));
 		tasks.addTask(2, aiTempt = new EntityAITempt(this, 0.6D, StarWarsItems.droidCaller, true));
-		tasks.addTask(3, new com.parzivail.pswm.ai.AiMouseScare(this, MobWookiee.class, 16.0F, 0.8D, 1.33D));
+		tasks.addTask(3, new AiMouseScare(this, MobWookiee.class, 16.0F, 0.8D, 1.33D));
 		tasks.addTask(4, new AiFreqMove(this, 1, 0));
 	}
 
@@ -65,7 +67,7 @@ public class MobDroidMouse extends EntityDroidBase
 	protected void entityInit()
 	{
 		super.entityInit();
-		dataWatcher.addObject(18, Byte.valueOf((byte)0));
+		dataWatcher.addObject(18, (byte)0);
 	}
 
 	@Override
@@ -108,7 +110,7 @@ public class MobDroidMouse extends EntityDroidBase
 	{
 		ItemStack itemstack = par1EntityPlayer.inventory.getCurrentItem();
 		if (itemstack == null)
-			itemstack = new ItemStack(net.minecraft.init.Blocks.air);
+			itemstack = new ItemStack(Blocks.air);
 		if (isTamed())
 		{
 			if (par1EntityPlayer.getUniqueID().equals(getOwner().getUniqueID()) && !worldObj.isRemote && !isBreedingItem(itemstack) && itemstack.getItem() == StarWarsItems.droidCaller)
@@ -118,7 +120,7 @@ public class MobDroidMouse extends EntityDroidBase
 				isJumping = false;
 			}
 		}
-		else if (itemstack != null && itemstack.getItem() == StarWarsItems.droidCaller && par1EntityPlayer.getDistanceSqToEntity(this) < 9.0D)
+		else if (itemstack.getItem() == StarWarsItems.droidCaller && par1EntityPlayer.getDistanceSqToEntity(this) < 9.0D)
 		{
 			if (!worldObj.isRemote)
 				if (rand.nextInt(3) == 0)

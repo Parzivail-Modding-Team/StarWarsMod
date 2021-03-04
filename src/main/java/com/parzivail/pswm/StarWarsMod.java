@@ -4,7 +4,6 @@ import com.parzivail.pswm.Resources.ConfigOptions;
 import com.parzivail.pswm.achievement.StarWarsAchievements;
 import com.parzivail.pswm.blocks.BlockHothSign;
 import com.parzivail.pswm.commands.CommandJediRobes;
-import com.parzivail.pswm.exception.UserError;
 import com.parzivail.pswm.handlers.ClientEventHandler;
 import com.parzivail.pswm.handlers.CommonEventHandler;
 import com.parzivail.pswm.handlers.GuiHandler;
@@ -423,7 +422,7 @@ public class StarWarsMod
 	}
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) throws UserError
+	public void preInit(FMLPreInitializationEvent event)
 	{
 		Lumberjack.info("========== Begin Parzi's Star Wars Mod preInit() ==========");
 
@@ -518,7 +517,7 @@ public class StarWarsMod
 		this.registerMessageClient(MessageHolocronSetClientActive.class);
 		this.registerMessageClient(MessageEntityClientGrab.class);
 
-		Lumberjack.log("Network registered " + String.valueOf(packetId) + " packets!");
+		Lumberjack.log("Network registered " + packetId + " packets!");
 	}
 
 	@SuppressWarnings("unchecked")

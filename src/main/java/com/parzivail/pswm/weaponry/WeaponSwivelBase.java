@@ -59,7 +59,7 @@ public class WeaponSwivelBase extends EntityLiving
 		if (this.riddenByEntity != null)
 		{
 			this.rotationLast = this.rotationYaw += this.riddenByEntity.rotationYaw - this.rotationLast;
-			this.rotationPitchLast = this.rotationPitch += ((EntityPlayer)this.riddenByEntity).rotationPitch - this.rotationPitchLast;
+			this.rotationPitchLast = this.rotationPitch += this.riddenByEntity.rotationPitch - this.rotationPitchLast;
 			this.setRotation(this.rotationYaw, this.rotationPitch);
 			this.rotationYawHead = this.renderYawOffset = this.rotationYaw;
 		}

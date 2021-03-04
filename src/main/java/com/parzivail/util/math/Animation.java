@@ -138,8 +138,7 @@ public class Animation
 	 */
 	public void stop()
 	{
-		if (AnimationManager.animations.contains(this))
-			AnimationManager.animations.remove(this);
+		AnimationManager.animations.remove(this);
 	}
 
 	/**

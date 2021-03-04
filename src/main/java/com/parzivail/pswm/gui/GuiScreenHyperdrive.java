@@ -36,7 +36,7 @@ import java.util.function.Consumer;
 @SideOnly(Side.CLIENT)
 public class GuiScreenHyperdrive extends GuiScreen
 {
-	private class MovingShip
+	private static class MovingShip
 	{
 		FPoint position;
 		TradeRoute route;

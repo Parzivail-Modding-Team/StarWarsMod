@@ -8,6 +8,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class PNBTSerial
@@ -171,7 +172,7 @@ public class PNBTSerial
 		else
 		{
 			Field[] fields = clazz.getFields();
-			Arrays.sort(fields, (Field f1, Field f2) -> f1.getName().compareTo(f2.getName()));
+			Arrays.sort(fields, Comparator.comparing(Field::getName));
 			fieldCache.put(clazz, fields);
 			return fields;
 		}

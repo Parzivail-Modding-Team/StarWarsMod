@@ -19,6 +19,8 @@ import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.World;
 
+import java.util.Arrays;
+
 public class MobTatooineCommoner extends EntityCreature implements IParziNPC
 {
 	public AiFollowEntity aiFollowEntity;
@@ -120,7 +122,7 @@ public class MobTatooineCommoner extends EntityCreature implements IParziNPC
 
 	private void setType(int t)
 	{
-		getDataWatcher().updateObject(25, Integer.valueOf(t));
+		getDataWatcher().updateObject(25, t);
 	}
 
 	public boolean getFraud()
@@ -145,7 +147,7 @@ public class MobTatooineCommoner extends EntityCreature implements IParziNPC
 
 	private int indexOf(String[] haystack, String needle)
 	{
-		return java.util.Arrays.asList(haystack).indexOf(needle);
+		return Arrays.asList(haystack).indexOf(needle);
 	}
 
 	public boolean isAlreadyTrading(WeightedTradeItem item, MerchantRecipeList trades)

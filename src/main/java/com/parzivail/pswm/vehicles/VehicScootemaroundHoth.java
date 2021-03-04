@@ -1,7 +1,6 @@
 package com.parzivail.pswm.vehicles;
 
 import com.parzivail.util.vehicle.VehicleLandBase;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -57,10 +56,8 @@ public class VehicScootemaroundHoth extends VehicleLandBase
 
 		if (!getEntityIdAtIndex(i).isEmpty())
 		{
-			Entity e = this.worldObj.getPlayerEntityByName(getEntityIdAtIndex(i));
 
-			if (e instanceof EntityPlayer)
-				return (EntityPlayer)e;
+			return this.worldObj.getPlayerEntityByName(getEntityIdAtIndex(i));
 		}
 		return null;
 	}
@@ -152,12 +149,7 @@ public class VehicScootemaroundHoth extends VehicleLandBase
 							removeRider(rider);
 						else
 						{
-							switch (i)
-							{
-								default:
-									setPlayerPosition(entityPlayerMP);
-									break;
-							}
+							setPlayerPosition(entityPlayerMP);
 						}
 					}
 				}

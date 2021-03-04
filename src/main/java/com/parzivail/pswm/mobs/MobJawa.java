@@ -74,7 +74,7 @@ public class MobJawa extends EntityCreature implements IMob
 	protected void entityInit()
 	{
 		super.entityInit();
-		getDataWatcher().addObject(25, Integer.valueOf(rand.nextInt(2)));
+		getDataWatcher().addObject(25, rand.nextInt(2));
 	}
 
 	@Override

@@ -22,6 +22,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class PMessage<REQ extends PMessage> implements Serializable, IMessage, IMessageHandler<REQ, IMessage>
@@ -65,9 +66,7 @@ public class PMessage<REQ extends PMessage> implements Serializable, IMessage, I
 		else
 		{
 			Field[] fields = clazz.getFields();
-			Arrays.sort(fields, (Field f1, Field f2) -> {
-				return f1.getName().compareTo(f2.getName());
-			});
+			Arrays.sort(fields, Comparator.comparing(Field::getName));
 			fieldCache.put(clazz, fields);
 			return fields;
 		}
@@ -326,7 +325,7 @@ public class PMessage<REQ extends PMessage> implements Serializable, IMessage, I
 		return message.handleMessage(context);
 	}
 
-	private final void readField(Field f, Class clazz, ByteBuf buf) throws IllegalArgumentException, IllegalAccessException
+	private void readField(Field f, Class clazz, ByteBuf buf) throws IllegalArgumentException, IllegalAccessException
 	{
 		Pair<Reader, Writer> handler = getHandler(clazz);
 		f.set(this, handler.getLeft().read(buf));
@@ -352,20 +351,20 @@ public class PMessage<REQ extends PMessage> implements Serializable, IMessage, I
 		}
 	}
 
-	private final void writeField(Field f, Class clazz, ByteBuf buf) throws IllegalArgumentException, IllegalAccessException
+	private void writeField(Field f, Class clazz, ByteBuf buf) throws IllegalArgumentException, IllegalAccessException
 	{
 		Pair<Reader, Writer> handler = getHandler(clazz);
 		handler.getRight().write(f.get(this), buf);
 	}
 
-	public static interface Reader<T extends Object>
+	public interface Reader<T>
 	{
-		public T read(ByteBuf buf);
+		T read(ByteBuf buf);
 	}
 
-	public static interface Writer<T extends Object>
+	public interface Writer<T>
 	{
-		public void write(T t, ByteBuf buf);
+		void write(T t, ByteBuf buf);
 	}
 
 }

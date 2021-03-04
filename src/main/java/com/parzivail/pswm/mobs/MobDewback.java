@@ -4,12 +4,13 @@ import com.parzivail.pswm.Resources;
 import com.parzivail.pswm.ai.AiFreqMove;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -64,7 +65,7 @@ public class MobDewback extends EntityHorse
 		}
 	}
 
-	protected net.minecraft.item.Item func_146068_u()
+	protected Item func_146068_u()
 	{
 		return null;
 	}
@@ -123,16 +124,9 @@ public class MobDewback extends EntityHorse
 	public boolean interact(EntityPlayer p_70085_1_)
 	{
 		ItemStack itemstack = p_70085_1_.inventory.getCurrentItem();
-		if (itemstack != null && itemstack.getItem() == net.minecraft.init.Items.spawn_egg)
+		if (itemstack != null && itemstack.getItem() == Items.spawn_egg)
 			return false;
 		return super.interact(p_70085_1_);
-	}
-
-	@Override
-	public IEntityLivingData onSpawnWithEgg(IEntityLivingData p_110161_1_)
-	{
-		Object p_110161_1_1 = super.onSpawnWithEgg(p_110161_1_);
-		return (IEntityLivingData)p_110161_1_1;
 	}
 
 	@Override

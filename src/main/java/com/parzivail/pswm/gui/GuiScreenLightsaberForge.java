@@ -419,17 +419,17 @@ public class GuiScreenLightsaberForge extends GuiScreen
 					case "maul":
 						if (listBBlade.get("rangeR") != null)
 						{
-							((OutlineRange)listBBlade.get("rangeR")).enabled = doublePrism;
-							((OutlineRange)listBBlade.get("rangeG")).enabled = doublePrism;
-							((OutlineRange)listBBlade.get("rangeB")).enabled = doublePrism;
+							listBBlade.get("rangeR").enabled = doublePrism;
+							listBBlade.get("rangeG").enabled = doublePrism;
+							listBBlade.get("rangeB").enabled = doublePrism;
 						}
 						break;
 					default:
 						if (listBBlade.get("rangeR") != null)
 						{
-							((OutlineRange)listBBlade.get("rangeR")).enabled = singlePrism;
-							((OutlineRange)listBBlade.get("rangeG")).enabled = singlePrism;
-							((OutlineRange)listBBlade.get("rangeB")).enabled = singlePrism;
+							listBBlade.get("rangeR").enabled = singlePrism;
+							listBBlade.get("rangeG").enabled = singlePrism;
+							listBBlade.get("rangeB").enabled = singlePrism;
 						}
 						break;
 				}
@@ -591,130 +591,108 @@ public class GuiScreenLightsaberForge extends GuiScreen
 
 		if (stackShowing.stackTagCompound.getBoolean(ItemLightsaber.nbtBladeOn))
 		{
-			if (s.equals("dooku"))
+			switch (s)
 			{
-				GL11.glScalef(0.49f, 0.49f, 0.49f);
-				GL11.glTranslatef(0, -0.595f, 0);
-			}
-			else if (s.equals("ezra"))
-			{
-				GL11.glScalef(0.47f, 0.47f, 0.47f);
-				GL11.glTranslatef(0, -0.76f, 0);
-			}
-			else if (s.equals("kanan"))
-			{
-				GL11.glScalef(0.455f, 0.455f, 0.455f);
-				GL11.glTranslatef(0, -0.78f, 0);
-			}
-			else if (s.equals("maul"))
-			{
-				GL11.glScalef(0.43f, 0.43f, 0.43f);
-				GL11.glTranslatef(0, 1.3f, 0);
-			}
-			else if (s.equals("padawan"))
-			{
-				GL11.glScalef(0.42f, 0.42f, 0.42f);
-				GL11.glTranslatef(0, -1.355f, 0);
-			}
-			else if (s.equals("shoto"))
-			{
-				GL11.glScalef(0.46f, 0.46f, 0.46f);
-				GL11.glTranslatef(0, -1.03f, 0);
-			}
-			else if (s.equals("doubleSith"))
-			{
-				GL11.glScalef(0.315f, 0.315f, 0.315f);
-				GL11.glTranslatef(0, 2.22f, 0);
-			}
-			else if (s.equals("vader2"))
-			{
-				GL11.glScalef(0.36f, 0.36f, 0.36f);
-				GL11.glTranslatef(0, -0.82f, 0);
-			}
-			else if (s.equals("luke1"))
-			{
-				GL11.glScalef(0.33f, 0.33f, 0.33f);
-				GL11.glTranslatef(0, -1.0f, 0);
-			}
-			else if (s.equals("luke2"))
-			{
-				GL11.glScalef(0.45f, 0.45f, 0.45f);
-				GL11.glTranslatef(0, -0.92f, 0);
-			}
-			else if (s.equals("crossguard"))
-			{
-				GL11.glScalef(0.38f, 0.38f, 0.38f);
-				GL11.glTranslatef(0, -0.95f, 0);
-			}
-			else if (s.equals("malgus"))
-			{
-				GL11.glScalef(0.465f, 0.465f, 0.465f);
-				GL11.glTranslatef(0, -1.04f, 0);
-			}
-			else if (s.equals("obiwan"))
-			{
-				GL11.glScalef(0.4f, 0.4f, 0.4f);
-				GL11.glTranslatef(0, -1.2f, 0);
-			}
-			else if (s.equals("quigon"))
-			{
-				GL11.glScalef(0.4f, 0.4f, 0.4f);
-				GL11.glTranslatef(0, -1.3f, 0);
-			}
-			else if (s.equals("revan"))
-			{
-				GL11.glScalef(0.38f, 0.38f, 0.38f);
-				GL11.glTranslatef(0, -1.33f, 0);
-			}
-			else if (s.equals("starkiller"))
-			{
-				GL11.glScalef(0.385f, 0.385f, 0.385f);
-				GL11.glTranslatef(0, -1.155f, 0);
-			}
-			else if (s.equals("plokoon"))
-			{
-				GL11.glScalef(0.395f, 0.395f, 0.395f);
-				GL11.glTranslatef(0, -0.92f, 0);
-			}
-			else if (s.equals("inquisitor"))
-			{
-				GL11.glScalef(0.26f, 0.26f, 0.26f);
-				GL11.glTranslatef(0, 3.08f, 0);
-			}
-			else if (s.equals("mace"))
-			{
-				GL11.glScalef(0.34f, 0.34f, 0.34f);
-				GL11.glTranslatef(0, -0.75f, 0);
-			}
-			else if (s.equals("yoda"))
-			{
-				GL11.glScalef(0.36f, 0.36f, 0.36f);
-				GL11.glTranslatef(0, -0.1f, 0);
-			}
-			else if (s.equals("ahsoka"))
-			{
-				GL11.glScalef(0.31f, 0.31f, 0.31f);
-				GL11.glTranslatef(0, -1.62f, 0);
-			}
-			else if (s.equals("darksaber"))
-			{
-				GL11.glScalef(0.36f, 0.36f, 0.36f);
-				GL11.glTranslatef(0, -1.27f, 0);
-			}
-			else if (s.equals("pike"))
-			{
-				GL11.glScalef(0.56f, 0.56f, 0.56f);
-				GL11.glTranslatef(0, -1.12f, 0);
-			}
-			else if (s.equals("revan2"))
-			{
-				GL11.glScalef(0.36f, 0.36f, 0.36f);
-				GL11.glTranslatef(0, -0.8f, 0);
-			}
-			else if (s.equals("ventress"))
-			{
-				GL11.glScalef(0.385f, 0.385f, 0.385f);
-				GL11.glTranslatef(0, -0.8f, 0);
+				case "dooku":
+					GL11.glScalef(0.49f, 0.49f, 0.49f);
+					GL11.glTranslatef(0, -0.595f, 0);
+					break;
+				case "ezra":
+					GL11.glScalef(0.47f, 0.47f, 0.47f);
+					GL11.glTranslatef(0, -0.76f, 0);
+					break;
+				case "kanan":
+					GL11.glScalef(0.455f, 0.455f, 0.455f);
+					GL11.glTranslatef(0, -0.78f, 0);
+					break;
+				case "maul":
+					GL11.glScalef(0.43f, 0.43f, 0.43f);
+					GL11.glTranslatef(0, 1.3f, 0);
+					break;
+				case "padawan":
+					GL11.glScalef(0.42f, 0.42f, 0.42f);
+					GL11.glTranslatef(0, -1.355f, 0);
+					break;
+				case "shoto":
+					GL11.glScalef(0.46f, 0.46f, 0.46f);
+					GL11.glTranslatef(0, -1.03f, 0);
+					break;
+				case "doubleSith":
+					GL11.glScalef(0.315f, 0.315f, 0.315f);
+					GL11.glTranslatef(0, 2.22f, 0);
+					break;
+				case "vader2":
+					GL11.glScalef(0.36f, 0.36f, 0.36f);
+					GL11.glTranslatef(0, -0.82f, 0);
+					break;
+				case "luke1":
+					GL11.glScalef(0.33f, 0.33f, 0.33f);
+					GL11.glTranslatef(0, -1.0f, 0);
+					break;
+				case "luke2":
+					GL11.glScalef(0.45f, 0.45f, 0.45f);
+					GL11.glTranslatef(0, -0.92f, 0);
+					break;
+				case "crossguard":
+					GL11.glScalef(0.38f, 0.38f, 0.38f);
+					GL11.glTranslatef(0, -0.95f, 0);
+					break;
+				case "malgus":
+					GL11.glScalef(0.465f, 0.465f, 0.465f);
+					GL11.glTranslatef(0, -1.04f, 0);
+					break;
+				case "obiwan":
+					GL11.glScalef(0.4f, 0.4f, 0.4f);
+					GL11.glTranslatef(0, -1.2f, 0);
+					break;
+				case "quigon":
+					GL11.glScalef(0.4f, 0.4f, 0.4f);
+					GL11.glTranslatef(0, -1.3f, 0);
+					break;
+				case "revan":
+					GL11.glScalef(0.38f, 0.38f, 0.38f);
+					GL11.glTranslatef(0, -1.33f, 0);
+					break;
+				case "starkiller":
+					GL11.glScalef(0.385f, 0.385f, 0.385f);
+					GL11.glTranslatef(0, -1.155f, 0);
+					break;
+				case "plokoon":
+					GL11.glScalef(0.395f, 0.395f, 0.395f);
+					GL11.glTranslatef(0, -0.92f, 0);
+					break;
+				case "inquisitor":
+					GL11.glScalef(0.26f, 0.26f, 0.26f);
+					GL11.glTranslatef(0, 3.08f, 0);
+					break;
+				case "mace":
+					GL11.glScalef(0.34f, 0.34f, 0.34f);
+					GL11.glTranslatef(0, -0.75f, 0);
+					break;
+				case "yoda":
+					GL11.glScalef(0.36f, 0.36f, 0.36f);
+					GL11.glTranslatef(0, -0.1f, 0);
+					break;
+				case "ahsoka":
+					GL11.glScalef(0.31f, 0.31f, 0.31f);
+					GL11.glTranslatef(0, -1.62f, 0);
+					break;
+				case "darksaber":
+					GL11.glScalef(0.36f, 0.36f, 0.36f);
+					GL11.glTranslatef(0, -1.27f, 0);
+					break;
+				case "pike":
+					GL11.glScalef(0.56f, 0.56f, 0.56f);
+					GL11.glTranslatef(0, -1.12f, 0);
+					break;
+				case "revan2":
+					GL11.glScalef(0.36f, 0.36f, 0.36f);
+					GL11.glTranslatef(0, -0.8f, 0);
+					break;
+				case "ventress":
+					GL11.glScalef(0.385f, 0.385f, 0.385f);
+					GL11.glTranslatef(0, -0.8f, 0);
+					break;
 			}
 		}
 

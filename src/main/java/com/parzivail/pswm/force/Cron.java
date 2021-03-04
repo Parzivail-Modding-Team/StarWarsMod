@@ -6,10 +6,7 @@ import com.parzivail.pswm.utils.EntityCooldownEntry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import org.apache.commons.io.IOUtils;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -390,7 +387,7 @@ public class Cron
 	public static float getPercentForLevel(int level)
 	{
 		int i = 100 - level;
-		i = i < 10 ? 10 : i;
+		i = Math.max(i, 10);
 		return i;
 	}
 

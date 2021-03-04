@@ -8,6 +8,7 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -115,7 +116,7 @@ public class MobTauntaun extends EntityHorse
 	public boolean interact(EntityPlayer p_70085_1_)
 	{
 		ItemStack itemstack = p_70085_1_.inventory.getCurrentItem();
-		if (itemstack != null && itemstack.getItem() == net.minecraft.init.Items.spawn_egg)
+		if (itemstack != null && itemstack.getItem() == Items.spawn_egg)
 			return false;
 		if (!isTame())
 		{

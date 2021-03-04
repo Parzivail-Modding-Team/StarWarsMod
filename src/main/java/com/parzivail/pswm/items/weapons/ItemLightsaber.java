@@ -26,7 +26,6 @@ import net.minecraft.world.World;
 import org.lwjgl.input.Keyboard;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -72,7 +71,7 @@ public class ItemLightsaber extends ItemSword
 		ArrayList<Integer> n = new ArrayList<>();
 		for (Integer aColorHex : colorHexNew)
 			n.add(GLPalette.makeOpaque(aColorHex));
-		Collections.sort(n, new IntColorComparator());
+		n.sort(new IntColorComparator());
 		colorHex = MathUtils.toIntArray(n);
 	}
 
@@ -306,10 +305,7 @@ public class ItemLightsaber extends ItemSword
 		/*
 		 * Blade Distortion ["kylo rendering"] (boolean)
 		 */
-		if (s.equals("crossguard"))
-			nbt.setBoolean(nbtBladeDistortion, true);
-		else
-			nbt.setBoolean(nbtBladeDistortion, false);
+		nbt.setBoolean(nbtBladeDistortion, s.equals("crossguard"));
 
 		nbt.setBoolean(nbtBladeOn, false);
 

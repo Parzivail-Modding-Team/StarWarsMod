@@ -12,16 +12,17 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderGenerate;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class BiomeChunkProviderSpace extends ChunkProviderGenerate
 {
-	private Random rand;
+	private final Random rand;
 	/**
 	 * Reference to the World object.
 	 */
-	private World worldObj;
+	private final World worldObj;
 
 	public BiomeChunkProviderSpace(World world, long seed, boolean features)
 	{
@@ -57,8 +58,7 @@ public class BiomeChunkProviderSpace extends ChunkProviderGenerate
 	@Override
 	public void func_147424_a(int p_147424_1_, int p_147424_2_, Block[] p_147424_3_)
 	{
-		for (int i = 0; i < p_147424_3_.length; i++)
-			p_147424_3_[i] = Blocks.air;
+		Arrays.fill(p_147424_3_, Blocks.air);
 	}
 
 	@Override

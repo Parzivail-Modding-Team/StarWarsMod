@@ -66,7 +66,7 @@ public class MobDroidProtocol2 extends EntityDroidBase
 	protected void entityInit()
 	{
 		super.entityInit();
-		dataWatcher.addObject(18, Byte.valueOf((byte)0));
+		dataWatcher.addObject(18, (byte)0);
 	}
 
 	@Override
@@ -120,7 +120,7 @@ public class MobDroidProtocol2 extends EntityDroidBase
 				isJumping = false;
 			}
 		}
-		else if (itemstack != null && itemstack.getItem() == StarWarsItems.droidCaller && par1EntityPlayer.getDistanceSqToEntity(this) < 9.0D)
+		else if (itemstack.getItem() == StarWarsItems.droidCaller && par1EntityPlayer.getDistanceSqToEntity(this) < 9.0D)
 		{
 			if (!worldObj.isRemote)
 				if (rand.nextInt(3) == 0)

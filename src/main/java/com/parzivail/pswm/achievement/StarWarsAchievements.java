@@ -42,7 +42,7 @@ public class StarWarsAchievements
 		travelIlum = new StarWarsAchievement("travelIlum", 2, 7, StarWarsItems.hyperdriveIlum, null);
 		travelDagobah = new StarWarsAchievement("travelDagobah", 2, 8, StarWarsItems.hyperdriveDagobah, null);
 		ezraBlaster = new StarWarsAchievement("ezraBlaster", -4, 5, StarWarsItems.lightsaberNew[Arrays.asList(ItemLightsaber.hilts).indexOf("ezra")], null);
-		page = new AchievementPage("Star Wars", StarWarsAchievement.achievements.toArray(new Achievement[StarWarsAchievement.achievements.size()]));
+		page = new AchievementPage("Star Wars", StarWarsAchievement.achievements.toArray(new Achievement[0]));
 		AchievementPage.registerAchievementPage(page);
 		FMLCommonHandler.instance().bus().register(new AchievementTrigger());
 		Lumberjack.info("Achievements, reporting for duty!");

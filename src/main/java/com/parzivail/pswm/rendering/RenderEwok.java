@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
 import net.minecraftforge.client.IItemRenderer;
@@ -85,7 +86,7 @@ public class RenderEwok extends RenderLiving
 				{
 					NBTTagCompound nbttagcompound = equippedItem.getTagCompound();
 					if (nbttagcompound.hasKey("SkullOwner", 10))
-						gameprofile = net.minecraft.nbt.NBTUtil.func_152459_a(nbttagcompound.getCompoundTag("SkullOwner"));
+						gameprofile = NBTUtil.func_152459_a(nbttagcompound.getCompoundTag("SkullOwner"));
 					else if (nbttagcompound.hasKey("SkullOwner", 8) && !StringUtils.isNullOrEmpty(nbttagcompound.getString("SkullOwner")))
 						gameprofile = new GameProfile(null, nbttagcompound.getString("SkullOwner"));
 				}

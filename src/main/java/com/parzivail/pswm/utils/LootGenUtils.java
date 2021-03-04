@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -74,6 +75,6 @@ public class LootGenUtils
 
 	private static int indexOf(String[] haystack, String needle)
 	{
-		return java.util.Arrays.asList(haystack).indexOf(needle);
+		return Arrays.asList(haystack).indexOf(needle);
 	}
 }

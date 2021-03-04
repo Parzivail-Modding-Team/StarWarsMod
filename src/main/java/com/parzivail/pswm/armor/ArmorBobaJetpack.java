@@ -2,6 +2,7 @@ package com.parzivail.pswm.armor;
 
 import com.parzivail.pswm.Resources;
 import com.parzivail.pswm.StarWarsItems;
+import com.parzivail.pswm.StarWarsMod;
 import com.parzivail.pswm.models.armor.ModelJetpack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,7 +25,7 @@ public class ArmorBobaJetpack extends ItemArmor
 		super(par2EnumArmorMaterial, par3, par4);
 		this.setUnlocalizedName(Resources.MODID + "." + "boba" + this.names[par4]);
 		this.setTextureName(Resources.MODID + ":" + "boba" + this.names[par4]);
-		this.setCreativeTab(com.parzivail.pswm.StarWarsMod.StarWarsTab);
+		this.setCreativeTab(StarWarsMod.StarWarsTab);
 	}
 
 	@Override

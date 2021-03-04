@@ -51,9 +51,9 @@ public class TileEntityCrystalCompressor extends TileEntity implements ISidedInv
 		return compressTimeMax;
 	}
 
-	public int setCompressTime(int time)
+	public void setCompressTime(int time)
 	{
-		return this.compressTime = time;
+		this.compressTime = time;
 	}
 
 	/**

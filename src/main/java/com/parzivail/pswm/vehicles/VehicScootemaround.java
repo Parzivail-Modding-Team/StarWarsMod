@@ -1,13 +1,14 @@
 package com.parzivail.pswm.vehicles;
 
 import com.parzivail.util.vehicle.VehicleLandBase;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class VehicScootemaround extends VehicleLandBase
 {
@@ -50,17 +51,13 @@ public class VehicScootemaround extends VehicleLandBase
 		return this.dataWatcher.getWatchableObjectString(ridersDatawatcherIds[i]);
 	}
 
+	@Nullable
 	private EntityPlayer getRiderAtIndex(int i)
 	{
 		if (i < 0 || i >= ridersDatawatcherIds.length)
 			return null;
 
-		Entity e = this.worldObj.getPlayerEntityByName(getEntityIdAtIndex(i));
-
-		if (e instanceof EntityPlayer)
-			return (EntityPlayer)e;
-
-		return null;
+		return this.worldObj.getPlayerEntityByName(getEntityIdAtIndex(i));
 	}
 
 	private void setRiderAtIndex(int i, EntityPlayer e)

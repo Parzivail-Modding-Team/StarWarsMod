@@ -22,7 +22,6 @@ import com.parzivail.pswm.dimension.tatooine.BiomeGenTatooine;
 import com.parzivail.pswm.dimension.tatooine.TatooineProvider;
 import com.parzivail.pswm.dimension.yavin.BiomeGenYavin;
 import com.parzivail.pswm.dimension.yavin.YavinProvider;
-import com.parzivail.pswm.handlers.TerrainGenHandler;
 import com.parzivail.pswm.mobs.*;
 import com.parzivail.pswm.mobs.trooper.MobSandtrooper;
 import com.parzivail.pswm.world.OreGenerator;
@@ -33,7 +32,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.MinecraftForge;
 
 public class WorldRegister
 {
@@ -83,8 +81,6 @@ public class WorldRegister
 		EntityRegistry.addSpawn(MobWookiee.class, 15, 1, 3, EnumCreatureType.creature, StarWarsMod.biomeKashyyyk);
 
 		GameRegistry.registerWorldGenerator(new OreGenerator(), 10);
-
-		MinecraftForge.TERRAIN_GEN_BUS.register(new TerrainGenHandler());
 
 		PlanetInformation space = new PlanetInformation();
 		space.setCubeTexture(new ResourceLocation(Resources.MODID + ":" + "textures/models/planets/space.png"));

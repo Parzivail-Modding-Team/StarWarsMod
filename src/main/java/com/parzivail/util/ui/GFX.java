@@ -563,8 +563,8 @@ public class GFX
 		float f2 = (color >> 8 & 0xff) / 255F;
 		float f3 = (color & 0xff) / 255F;
 		float theta = (float)(2 * 3.1415926 / segments);
-		float p = (float)MathHelper.cos(theta);// calculate the sine and cosine
-		float s = (float)MathHelper.sin(theta);
+		float p = MathHelper.cos(theta);// calculate the sine and cosine
+		float s = MathHelper.sin(theta);
 		float t;
 		GL11.glColor4f(f1, f2, f3, f);
 		float nx = radius;

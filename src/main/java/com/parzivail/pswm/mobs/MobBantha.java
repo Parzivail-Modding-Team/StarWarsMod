@@ -54,7 +54,7 @@ public class MobBantha extends EntityHorse implements IShearable
 	@Override
 	public void dropFewItems(boolean par1, int par2)
 	{
-		List<WeightedLoot> drop = new java.util.ArrayList();
+		List<WeightedLoot> drop = new ArrayList<>();
 		drop.add(new WeightedLoot(new ItemStack(StarWarsItems.banthaHorn, 1), LootGenUtils.baseRarity / 1.5F));
 		if (isBurning())
 			drop.add(new WeightedLoot(new ItemStack(StarWarsItems.banthaChopCooked, 1), LootGenUtils.baseRarity));
@@ -67,7 +67,7 @@ public class MobBantha extends EntityHorse implements IShearable
 	protected void entityInit()
 	{
 		super.entityInit();
-		dataWatcher.addObject(17, new Byte((byte)0));
+		dataWatcher.addObject(17, (byte)0);
 	}
 
 	@Override
@@ -184,7 +184,7 @@ public class MobBantha extends EntityHorse implements IShearable
 	public boolean interact(EntityPlayer p_70085_1_)
 	{
 		ItemStack itemstack = p_70085_1_.inventory.getCurrentItem();
-		if (itemstack != null && itemstack.getItem() == net.minecraft.init.Items.spawn_egg)
+		if (itemstack != null && itemstack.getItem() == Items.spawn_egg)
 			return false;
 		if (!isTame())
 		{
@@ -239,8 +239,8 @@ public class MobBantha extends EntityHorse implements IShearable
 	@Override
 	public IEntityLivingData onSpawnWithEgg(IEntityLivingData p_110161_1_)
 	{
-		Object p_110161_1_1 = super.onSpawnWithEgg(p_110161_1_);
-		return (IEntityLivingData)p_110161_1_1;
+		IEntityLivingData p_110161_1_1 = super.onSpawnWithEgg(p_110161_1_);
+		return p_110161_1_1;
 	}
 
 	/**

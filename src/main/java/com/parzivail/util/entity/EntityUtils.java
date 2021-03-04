@@ -111,7 +111,6 @@ public class EntityUtils
 
 				Vec3 vec31 = fromEntity.getLook(0);
 				Vec3 vec32 = vec3.addVector(vec31.xCoord * d0, vec31.yCoord * d0, vec31.zCoord * d0);
-				pointedEntity = null;
 				float f1 = 1.0F;
 				List list = fromEntity.worldObj.getEntitiesWithinAABBExcludingEntity(fromEntity, fromEntity.boundingBox.addCoord(vec31.xCoord * d0, vec31.yCoord * d0, vec31.zCoord * d0).expand(f1, f1, f1));
 				double d2 = d1;
@@ -164,8 +163,8 @@ public class EntityUtils
 		while (EntityList.getClassFromID(mobId) != null)
 			mobId += 1;
 		EntityRegistry.registerModEntity(entityClass, entityName, mobId, StarWarsMod.instance, 80, 1, true);
-		EntityList.IDtoClassMapping.put(Integer.valueOf(mobId), entityClass);
-		Lumberjack.debug("Registered entity \"" + entityName + "\" as ID " + String.valueOf(mobId));
+		EntityList.IDtoClassMapping.put(mobId, entityClass);
+		Lumberjack.debug("Registered entity \"" + entityName + "\" as ID " + mobId);
 	}
 
 	/**
@@ -181,8 +180,8 @@ public class EntityUtils
 		while (EntityList.getClassFromID(mobId) != null)
 			mobId += 1;
 		EntityRegistry.registerModEntity(mobClass, mobName, mobId, StarWarsMod.instance, 80, 1, true);
-		EntityList.IDtoClassMapping.put(Integer.valueOf(mobId), mobClass);
-		EntityList.entityEggs.put(Integer.valueOf(mobId), new EntityList.EntityEggInfo(mobId, bgColor, fgColor));
-		Lumberjack.debug("Registered entity (and egg) \"" + mobName + "\" as ID " + String.valueOf(mobId));
+		EntityList.IDtoClassMapping.put(mobId, mobClass);
+		EntityList.entityEggs.put(mobId, new EntityList.EntityEggInfo(mobId, bgColor, fgColor));
+		Lumberjack.debug("Registered entity (and egg) \"" + mobName + "\" as ID " + mobId);
 	}
 }

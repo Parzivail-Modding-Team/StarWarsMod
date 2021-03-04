@@ -3,11 +3,13 @@ package com.parzivail.pswm.mobs;
 import com.parzivail.pswm.Resources;
 import com.parzivail.pswm.StarWarsItems;
 import com.parzivail.pswm.ai.AiFreqMove;
+import com.parzivail.pswm.ai.AiMouseScare;
 import com.parzivail.util.entity.EntityUtils;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowOwner;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -20,7 +22,7 @@ public class MobDroidTrainingRemote extends EntityDroidBase
 		super(par1World);
 		setSize(0.5F, 2);
 		tasks.addTask(1, new EntityAIFollowOwner(this, 1.0D, 10.0F, 5.0F));
-		tasks.addTask(3, new com.parzivail.pswm.ai.AiMouseScare(this, MobWookiee.class, 16.0F, 0.8D, 1.33D));
+		tasks.addTask(3, new AiMouseScare(this, MobWookiee.class, 16.0F, 0.8D, 1.33D));
 		tasks.addTask(4, new AiFreqMove(this, 1, 0));
 	}
 
@@ -59,7 +61,7 @@ public class MobDroidTrainingRemote extends EntityDroidBase
 	protected void entityInit()
 	{
 		super.entityInit();
-		dataWatcher.addObject(18, Byte.valueOf((byte)0));
+		dataWatcher.addObject(18, (byte)0);
 	}
 
 	@Override
@@ -95,15 +97,6 @@ public class MobDroidTrainingRemote extends EntityDroidBase
 	protected String getLivingSound()
 	{
 		return Resources.MODID + ":" + "mob.mouse.say";
-	}
-
-	@Override
-	public boolean interact(EntityPlayer par1EntityPlayer)
-	{
-		ItemStack itemstack = par1EntityPlayer.inventory.getCurrentItem();
-		if (itemstack == null)
-			itemstack = new ItemStack(net.minecraft.init.Blocks.air);
-		return super.interact(par1EntityPlayer);
 	}
 
 	@Override

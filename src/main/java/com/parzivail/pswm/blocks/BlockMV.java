@@ -66,9 +66,9 @@ public class BlockMV extends PBlockContainer implements IDebugProvider
 		{
 			TileEntityMV vap = (TileEntityMV)tile;
 			float l = vap.progressTicks / (float)vap.totalTicks;
-			list.add(String.valueOf((int)(l * 100f)) + "%");
+			list.add((int)(l * 100f) + "%");
 			if (vap.getStackInSlot(0) != null)
-				list.add(LangUtils.translate("0.droplets", String.valueOf(vap.getStackInSlot(0).stackSize)));
+				list.add(LangUtils.translate("0.droplets", vap.getStackInSlot(0).stackSize));
 		}
 
 		return list;

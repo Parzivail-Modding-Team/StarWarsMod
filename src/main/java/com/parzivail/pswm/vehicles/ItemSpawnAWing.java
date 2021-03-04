@@ -6,13 +6,14 @@ import com.parzivail.pswm.StarWarsMod;
 import com.parzivail.pswm.registry.KeybindRegistry;
 import com.parzivail.util.ui.LangUtils;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import org.lwjgl.input.Keyboard;
 
 import java.util.List;
 
-public class ItemSpawnAWing extends net.minecraft.item.Item
+public class ItemSpawnAWing extends Item
 {
 	public String name = "spawnAwing";
 

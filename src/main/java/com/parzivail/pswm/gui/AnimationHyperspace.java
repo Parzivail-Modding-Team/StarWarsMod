@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class AnimationHyperspace extends Animation
 {
-	private class Star
+	private static class Star
 	{
 		Point pos;
 		int dist;
@@ -36,9 +36,9 @@ public class AnimationHyperspace extends Animation
 		}
 	}
 
-	private ArrayList<Star> stars;
-	private boolean reverse;
-	private ScaledResolution r;
+	private final ArrayList<Star> stars;
+	private final boolean reverse;
+	private final ScaledResolution r;
 
 	public AnimationHyperspace(int amtStars, boolean reverse)
 	{

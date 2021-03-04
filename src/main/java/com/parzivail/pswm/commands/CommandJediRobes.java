@@ -54,7 +54,7 @@ public class CommandJediRobes extends CommandBase
 
 		EntityPlayerMP player = getCommandSenderAsPlayer(icommandsender);
 
-		if (player != null && Cron.getHolocron(player) != null && (key.equalsIgnoreCase("level") || key.equalsIgnoreCase("side") || key.equalsIgnoreCase("xp") || key.equalsIgnoreCase("maxxp")))
+		if (Cron.getHolocron(player) != null && (key.equalsIgnoreCase("level") || key.equalsIgnoreCase("side") || key.equalsIgnoreCase("xp") || key.equalsIgnoreCase("maxxp")))
 		{
 			ItemStack robes = Cron.getHolocron(player);
 			Cron.getXP(robes);
@@ -74,26 +74,24 @@ public class CommandJediRobes extends CommandBase
 				}
 			else
 				robes.stackTagCompound.setInteger(key, value);
-			icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Set %s to %s", key, String.valueOf(value))));
+			icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Set %s to %s", key, value)));
 
 			if (key.equalsIgnoreCase("level"))
 			{
 				robes.stackTagCompound.setInteger(Resources.nbtMaxXp, (value + 1) * 100);
-				icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Set Max XP to %s", String.valueOf((value + 1) * 100))));
+				icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Set Max XP to %s", (value + 1) * 100)));
 				robes.stackTagCompound.setInteger(Resources.nbtRemainingPts, value);
-				icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Set remaining Upgrade Points to %s", String.valueOf(value))));
+				icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Set remaining Upgrade Points to %s", value)));
 			}
 		}
 		else
 		{
 			ItemStack robes = Cron.getHolocron(player);
 			icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Usage: %s", this.getCommandUsage(icommandsender))));
-			if (player == null)
-				icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Error! Player is null.")));
-			else if (robes == null)
-				icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Error! You must have a Holocron.")));
+			if (robes == null)
+				icommandsender.addChatMessage(new ChatComponentText("[Holocron] Error! You must have a Holocron."));
 			else
-				icommandsender.addChatMessage(new ChatComponentText(String.format("[Holocron] Error! Unknown key.")));
+				icommandsender.addChatMessage(new ChatComponentText("[Holocron] Error! Unknown key."));
 		}
 	}
 }

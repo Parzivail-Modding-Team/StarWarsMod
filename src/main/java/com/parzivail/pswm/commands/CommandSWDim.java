@@ -12,11 +12,11 @@ import java.util.List;
 
 public class CommandSWDim implements ICommand
 {
-	private List aliases;
+	private final List<String> aliases;
 
 	public CommandSWDim()
 	{
-		this.aliases = new ArrayList();
+		this.aliases = new ArrayList<>();
 		this.aliases.add("sw-dim");
 	}
 
