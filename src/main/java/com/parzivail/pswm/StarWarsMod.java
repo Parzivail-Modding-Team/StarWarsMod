@@ -56,7 +56,6 @@ import java.util.Random;
 public class StarWarsMod
 {
 	public static boolean hasShownNeedUpdate = false;
-	public static boolean hasShownLeaderboardPart = false;
 
 	private static int packetId = 0;
 

@@ -271,11 +271,6 @@ public class ClientEventHandler
 				player.addChatMessage(new ChatComponentText(LangUtils.translate("pswm.newversion", TextUtils.addEffect(Resources.ONLINE_VERSION, TextEffects.COLOR_YELLOW), TextUtils.addEffect(Resources.VERSION, TextEffects.COLOR_YELLOW))));
 				StarWarsMod.hasShownNeedUpdate = true;
 			}
-			if (ConfigOptions.enableGlobalLeaderboard && !StarWarsMod.hasShownLeaderboardPart && logInEvent.world.isRemote)
-			{
-				player.addChatMessage(new ChatComponentText(LangUtils.translate("leaderboard.thanks")));
-				StarWarsMod.hasShownLeaderboardPart = true;
-			}
 
 			ItemStack qlog = ItemQuestLog.getQuestContainer(player);
 			if (qlog != null && ItemQuestLog.getInHyperspace(qlog))

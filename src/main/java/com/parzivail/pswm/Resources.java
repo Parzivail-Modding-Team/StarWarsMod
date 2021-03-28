@@ -66,7 +66,6 @@ public class Resources
 
 		public static boolean enableCreditsOverlay;
 		public static boolean enableBuckets;
-		public static boolean enableGlobalLeaderboard;
 		public static boolean enableLightsaberHum;
 		public static boolean beshOverride;
 		public static boolean enableTabOriginal = true;
@@ -83,7 +82,6 @@ public class Resources
 			enableTabSequel = config.get(CAT_CORE, "Enable Sequel Trilogy Tab", true, "Whether or not the Sequel Trilogy tab is enabled").setRequiresMcRestart(true).getBoolean();
 			enableBetaFeatures = config.get(CAT_CORE, "Enable Debug Mode", false, "Development purposes only. Do not use!").setRequiresMcRestart(true).getBoolean();
 			beshOverride = config.get(CAT_CORE, "Use Aurebesh Font", false, "Enable for a fun time!").setRequiresMcRestart(true).getBoolean();
-			enableGlobalLeaderboard = config.get(CAT_CORE, "Participate in Global Leaderboard", true, "If true, you agree to have which side you choose (Jedi or Sith) logged").getBoolean();
 
 			dimTatooineId = config.get(CAT_DIM, "tatooine", 2).setRequiresMcRestart(true).getInt();
 			dimHothId = config.get(CAT_DIM, "hoth", 3).setRequiresMcRestart(true).getInt();
