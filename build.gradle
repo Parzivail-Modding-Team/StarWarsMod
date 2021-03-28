@@ -23,7 +23,7 @@ apply plugin: 'java'
 
 apply plugin: 'forge'
 
-version = "1.3.3"
+version = "1.3.4"
 group = "com.parzivail.pswm" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "starwarsmod"
 
